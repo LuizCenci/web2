@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table" border="1px">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Especialidade</th>
+                {{#if admin}}
+                <th scope="col"></th>
+                <th scope="col"></th>
+                {{/if}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each especialidades}}
+            <tr>
+                <td>{{id_especialidade}}</td>
+                <td>{{nome_especialidade}}</td>
+                {{#if ../admin}}
+                <td><a href="especialidadeUpdate/{{id_especialidade}}" class="btn btn-success">Editar</a></td>
+                <td><a href="especialidadeDelete/{{id_especialidade}}" class="btn btn-danger">Deletar</a></td>
+                {{/if}}
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

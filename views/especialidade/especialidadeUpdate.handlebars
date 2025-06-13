@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <h2 class="card-title mb-4">Editar Especialidade</h2>
+    <form action="/especialidadeUpdate" method="post">
+        <div class="mb-3">
+            <input type="hidden" name="id_especialidade" id="" value="{{especialidade.id_especialidade}}">
+            <label class="form-label" for="nome">Nome:</label>
+            <input class="form-control" id="nome" type="" name="nome_especialidade" value="{{especialidade.nome_especialidade}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Editar</button>
+    </form>
+</div>

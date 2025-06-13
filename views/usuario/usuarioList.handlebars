@@ -1,0 +1,27 @@
+<div class="container">
+    <table class="table" border="1px">
+        <thead>
+            <tr>
+                <th scope="col">Login</th>
+                <th scope="col">Senha</th>
+                <th scope="col">Tipo</th>
+                {{#if admin}}
+                <th scope="col"></th>
+                <th scope="col"></th>
+                {{/if}}
+            </tr>
+        </thead>
+        {{#each usuarios}}
+        <tr>
+            <td>{{login}}</td>
+            <td>{{senha}}</td>
+            <td>{{tipo}}</td>
+            {{#if ../admin}}
+                <td><a href="usuarioUpdate/{{id}}" class="btn btn-success">Editar</a></td>
+                <td><a href="usuarioDelete/{{id}}" class="btn btn-danger">Deletar</a></td>
+            {{/if}}
+        </tr>
+        {{/each}}
+    </table>
+</div>
+

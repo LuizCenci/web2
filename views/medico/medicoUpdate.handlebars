@@ -1,0 +1,25 @@
+
+<div class="container mt-5">
+    <h2 class="card-title mb-4">Editar Médico</h2>
+    <form action="/medicoUpdate" method="post">
+        <div class="mb-3">
+            <input type="hidden" name="id_medico" value="{{medico.id_medico}}">
+            <label class="form-label" for="nomeMedico">Digite o nome do Médico:</label>
+            <input class="form-control" type="text" id="nomeMedico" name="nome_medico"  value="{{medico.nome_medico}}">
+            <label class="form-label" for="crm">Digite o CRM do Médico:</label>
+            <input class="form-control" type="text" id="crm" name="crm" value="{{medico.crm}}">
+            <label class="form-label" for="telefone">Digite o telefone do Médico:</label>
+            <input class="form-control" type="text" id="telefone" name="telefone" value="{{medico.telefone}}">
+            
+        </div>
+        <label class="form-label" for="especialidade">Especialidade:</label>
+            <select class="form-select" id="especialidade" name="id_especialidade">
+                {{#each especialidades}}
+                    <option value="{{this.id_especialidade}}">
+                            {{this.nome_especialidade}} 
+                    </option>
+                {{/each}}
+            </select>
+        <button type="submit" class="btn btn-primary">Editar</button>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+<div class="container mt-5">
+    <h2 class="card-title mb-4">Cadastrar Usuário</h2>
+    <form action="/usuarioCreate" method="post">
+        <div class="mb-3">
+            <label for="login" class="form-label">Login:</label>
+            <input type="text" class="form-control" id="login" name="login" required>
+            <label for="senha" class="form-label">Senha:</label>
+            <input type="password" class="form-control" id="senha" name="senha" required>
+            <label for="tipo" class="form-label">Tipo:</label>
+            <input type="number" class="form-control" id="tipo" name="tipo" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>

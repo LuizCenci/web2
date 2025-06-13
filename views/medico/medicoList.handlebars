@@ -1,0 +1,32 @@
+<div class="container">
+    <table class="table" border="1px">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Médico</th>
+                <th scope="col">CRM</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Especialidade</th>
+                {{#if admin}}
+                <th scope="col"></th>
+                <th scope="col"></th>
+                {{/if}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#each medicos}}
+            <tr>
+                <td>{{id_medico}}</td>
+                <td>{{nome_medico}}</td>
+                <td>{{crm}}</td>
+                <td>{{telefone}}</td>
+                <td>{{especialidade.nome_especialidade}}</td>
+                {{#if ../admin}}
+                <td><a href="medicoUpdate/{{id_medico}}" class="btn btn-success">Editar</a></td>
+                <td><a href="medicoDelete/{{id_medico}}" class="btn btn-danger">Deletar</a></td>
+                {{/if}}
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

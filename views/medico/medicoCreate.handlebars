@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <h2 class="card-title mb-4">Cadastrar Médico</h2>
+    <form action="/medicoCreate" method="post">
+        <div class="mb-3">
+            <label class="form-label" for="nomeMedico">Digite o nome do Médico:</label>
+            <input class="form-control" type="text" id="nomeMedico" name="nome_medico">
+            <label class="form-label" for="crm">Digite o CRM do Médico:</label>
+            <input class="form-control" type="text" id="crm" name="crm">
+            <label class="form-label" for="telefone">Digite o telefone do Médico:</label>
+            <input class="form-control" type="text" id="telefone" name="telefone">
+            
+        </div>
+        <label class="form-label" for="especialidade">Especialidade:</label>
+            <select class="form-select" id="especialidade" name="id_especialidade">
+                {{#each especialidades}}
+                    <option value="{{this.id_especialidade}}">
+                            {{this.nome_especialidade}} 
+                    </option>
+                {{/each}}
+            </select>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>

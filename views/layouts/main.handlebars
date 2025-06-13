@@ -1,0 +1,38 @@
+<!DOCTYPE html>​
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Sistema de Clínicas Médicas</title>​
+</head>​
+
+<body>
+    <h1 style="text-align: center;">Sistema de Clínicas Médicas</h1>​
+    <label>Usuario Logado: {{ login }}</label>
+    <div style="width: 100%;">
+        <nav class="navbar navbar-collapse-lg navbar-light bg-light">
+            {{#if admin}}
+                <a class="navbar-brand-dark" href="/usuarioCreate"> <button class="btn btn-dark" > Cadastrar Usuário</button> </a> 
+                <a class="navbar-brand" href="/medicoCreate"><button class="btn btn-dark" >Adicionar Médico</button></a>
+                <a class="navbar-brand" href="/especialidadeCreate"><button class="btn btn-dark" >Adicionar Especialidade</button></a>
+            {{/if}}
+            <a class="navbar-brand" href="/usuarioList"> <button class="btn btn-dark" > Listar Usuários</button> </a>
+            <a class="navbar-brand" href="/medicoList"><button class="btn btn-dark" >Listar Médicos</button></a>
+            <a class="navbar-brand" href="/especialidadeList"><button class="btn btn-dark" >Listar Especialidades</button></a>
+            <a class="navbar-brand" href="/logout"><button class="btn btn-dark" >Logout</button></a>
+        </nav>
+    </div>
+    
+    <center>  
+        <br> <br>
+        {{{body}}}
+    </center>
+
+    {{log this}}
+</body>
+
+</html>
