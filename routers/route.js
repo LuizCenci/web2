@@ -20,13 +20,13 @@ route.get("/home", function (req, res) {
     if (req.session.login){
         res.render('home')
     }else{
-        res.redirect('/')
+        res.redirect('/api/medicos/login')
     } 
 });
 
 //Controller Usuario
-route.get("/", controllerUsuario.getLogin);
-route.post("/login", controllerUsuario.postLogin);
+// route.get("/", controllerUsuario.getLogin);
+// route.post("/login", controllerUsuario.postLogin);
 route.get("/usuarioCreate", middlewares.onlyAdmin, controllerUsuario.getCreate, );
 route.post("/usuarioCreate", middlewares.onlyAdmin, controllerUsuario.postCreate);
 route.get("/usuarioList", controllerUsuario.getList);
@@ -44,12 +44,12 @@ route.post("/especialidadeUpdate", middlewares.onlyAdmin, controllerEspecialidad
 route.get("/especialidadeDelete/:id_especialidade", middlewares.onlyAdmin, controllerEspecialidade.getDelete);
 
 //Controller medico
-route.get("/medicoCreate", middlewares.onlyAdmin, controllerMedico.getCreate);
-route.post("/medicoCreate", middlewares.onlyAdmin, controllerMedico.postCreate);
-route.get("/medicoList", controllerMedico.getList);
-route.get("/medicoUpdate/:id_medico", middlewares.onlyAdmin, controllerMedico.getUpdate);
-route.post("/medicoUpdate/", middlewares.onlyAdmin, controllerMedico.postUpdate);
-route.get("/medicoDelete/:id_medico", middlewares.onlyAdmin, controllerMedico.getDelete);
+// route.get("/medicoCreate", middlewares.onlyAdmin, controllerMedico.getCreate);
+// route.post("/medicoCreate", middlewares.onlyAdmin, controllerMedico.postCreate);
+// route.get("/medicoList", controllerMedico.getList);
+// route.get("/medicoUpdate/:id_medico", middlewares.onlyAdmin, controllerMedico.getUpdate);
+// route.post("/medicoUpdate/", middlewares.onlyAdmin, controllerMedico.postUpdate);
+// route.get("/medicoDelete/:id_medico", middlewares.onlyAdmin, controllerMedico.getDelete);
 
 
 module.exports = route;
